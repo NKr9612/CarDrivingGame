@@ -43,7 +43,7 @@ function moveEnemy(car) {
         }
         if (item.y >= 1500) {
             item.y = -600;
-            item.style.left = Math.floor(Math.random() * 350) + "px";
+            item.style.left = Math.floor(Math.random() * 150) + "px";
             item.style.backgroundColor = randomColor();
         }
         item.y += speed;
@@ -55,6 +55,7 @@ function playGame() {
     let car = document.querySelector(".car");
     moveLines();
     moveEnemy(car);
+    speed = 10;
     let road = gameArea.getBoundingClientRect();
     if (player.start) {
         if (keys.ArrowUp && player.y > road.top) {
